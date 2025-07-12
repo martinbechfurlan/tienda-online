@@ -1,0 +1,372 @@
+/* RESET Y BASE */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+  color: #333;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* LAYOUT GENERAL */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  padding: 1rem;
+}
+
+/* HEADER BEM */
+.header {
+  background-color: #333;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.header__nav {}
+
+.header__list {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.header__item a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.header__item a:hover {
+  text-decoration: underline;
+}
+
+/* FOOTER BEM */
+.footer {
+  background-color: #222;
+  color: #ccc;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+.footer__text {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* HOME BEM */
+.home {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.home__title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.home__text {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+.home__button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.home__button:hover {
+  background-color: #0056b3;
+}
+
+
+/* PRODUCT CARD BEM */
+.product-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  max-width: 300px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card__image {
+  width: 100%;
+  height: 180px; /* 👈 altura fija */
+  object-fit: contain; /* 👈 ajusta sin recortar */
+  background-color: #f4f4f4; /* opcional para fondo uniforme */
+  padding: 0.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.product-card__content {
+  padding: 1rem;
+}
+
+.product-card__title {
+  font-size: 1.25rem;
+  margin: 0.5rem 0;
+}
+
+.product-card__brand {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.product-card__desc {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
+.product-card__price {
+  font-weight: bold;
+  color: #007bff;
+  margin-bottom: 1rem;
+}
+
+.product-card__link {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: #007bff;
+  color: white;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.product-card__link:hover {
+  background: #0056b3;
+}
+
+/* PRODUCTS BEM */
+.products {
+  padding: 1rem;
+}
+
+.products__title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.products__search {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.5rem;
+  margin-bottom: 2rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.products__loading {
+  font-style: italic;
+}
+
+.products__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* PRODUCT DETAIL BEM */
+.product-detail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.product-detail__image {
+  max-width: 400px;
+  width: 100%;
+  border-radius: 8px;
+}
+
+.product-detail__info {
+  max-width: 600px;
+  flex: 1;
+}
+
+.product-detail__title {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.product-detail__brand {
+  font-size: 1rem;
+  color: #777;
+  margin-bottom: 1rem;
+}
+
+.product-detail__desc {
+  margin-bottom: 1rem;
+}
+
+.product-detail__price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #007bff;
+}
+
+.product-detail__button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.product-detail__button:hover {
+  background-color: #0056b3;
+}
+
+.product-detail__back {
+  display: inline-block;
+  color: #007bff;
+  margin-top: 1rem;
+}
+
+/* CART BEM */
+.cart {
+  padding: 1rem;
+}
+
+.cart__image {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  background-color: #f4f4f4;
+  border-radius: 6px;
+  padding: 0.5rem;
+}
+
+
+.cart__title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.cart__empty {
+  font-style: italic;
+  color: #666;
+}
+
+.cart__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cart__item {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding: 1rem 0;
+}
+
+.cart__image {
+  width: 100px;
+  margin-right: 1rem;
+  border-radius: 6px;
+}
+
+.cart__details {
+  flex: 1;
+}
+
+.cart__name {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.cart__quantity,
+.cart__price {
+  font-size: 1rem;
+  color: #555;
+}
+
+.cart__total {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: right;
+  margin-top: 2rem;
+}
+
+/* ADMIN BEM */
+.admin {
+  padding: 1rem;
+}
+
+.admin__title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.admin__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin__table th,
+.admin__table td {
+  border: 1px solid #ddd;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.admin__table th {
+  background-color: #f4f4f4;
+}
+
+.admin__button {
+  padding: 0.4rem 0.8rem;
+  margin-right: 0.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.admin__button--edit {
+  background-color: #ffc107;
+  color: #000;
+}
+
+.admin__button--delete {
+  background-color: #dc3545;
+  color: #fff;
+}
